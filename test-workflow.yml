@@ -1,0 +1,18 @@
+name: Test Workflow
+
+on: 
+  push:  # This workflow triggers on push events
+    branches: 
+      - main  # Only for the 'main' branch
+  workflow_dispatch:  # Allows manual triggering
+
+jobs:
+  test:
+    runs-on: ubuntu-latest  # Run this on an Ubuntu machine
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3  # Checks out your code
+
+    - name: Run a simple command
+      run: echo "Hello, your workflow is running successfully!"
